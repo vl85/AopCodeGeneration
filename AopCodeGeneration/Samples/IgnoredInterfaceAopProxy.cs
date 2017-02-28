@@ -8,9 +8,7 @@ namespace AopCodeGeneration.Samples
         private readonly InterceptionHandler _interceptionHandler;
         private readonly IIgnoredInterface _realInstance;
 
-        public IgnoredInterfaceAopProxy(
-            IIgnoredInterface realInstance,
-            InterceptionHandler interceptionHandler)
+        public IgnoredInterfaceAopProxy(IIgnoredInterface realInstance, InterceptionHandler interceptionHandler)
         {
             _realInstance = realInstance;
             _interceptionHandler = interceptionHandler;
@@ -18,10 +16,7 @@ namespace AopCodeGeneration.Samples
 
         public void Dispose()
         {
-            var invocationInfo = InvocationInfo.Create(
-                typeof(IgnoredInterfaceAopProxy),
-                nameof(Dispose),
-                Dispose);
+            var invocationInfo = InvocationInfo.Create(typeof (IgnoredInterfaceAopProxy), nameof(Dispose), Dispose);
             _interceptionHandler.Invoke(invocationInfo);
         }
 

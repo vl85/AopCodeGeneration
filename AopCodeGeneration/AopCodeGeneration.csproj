@@ -94,6 +94,12 @@
     <Compile Include="AopProxy.cs" />
     <Compile Include="Metadata\GenericArgumentRestriction.cs" />
     <Compile Include="Metadata\GenericArgumentRestrictionType.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\AppConfigPeriodicRefreshHandlerAopProxy.cs" />
     <Compile Include="Samples\IgnoredInterfaceAopProxy.cs" />
     <Compile Include="Samples\IInterfaceWithGenericMethod.cs" />
     <Compile Include="Samples\IGenericInterface.cs" />
@@ -124,6 +130,13 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
